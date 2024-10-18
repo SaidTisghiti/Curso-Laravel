@@ -33,19 +33,20 @@ Route::get('/posts/{post}', [PostController::class, 'show']);
 
 Route::get('prueba', function(){
     /*
-        Crear nuevo post
         $post = new Post;
 
-        $post->title = 'Título de prueba 3';
-        $post->content = 'Contenido de prueba 3';
-        $post->categoria = 'Categoria de prueba 3';
+        $post->title = 'TíTuLo DE prueBA 4';
+        $post->content = 'Contenido de prueba 4';
+        $post->categoria = 'Categoria de prueba 4';
 
         $post->save();
 
         return $post;
     */
 
-    // $post = Post::find(1);
+        $post = Post::find(4);
+
+        return $post;
 
     /*
         Actualizar registro
@@ -85,13 +86,16 @@ Route::get('prueba', function(){
                     ->get();
         
         return $posts;
-     */
+    */
 
-    // Eliminar datos de la tabla
-    $post = Post::find(1);
-    $post->delete();
+    /*
+        Eliminar datos de la tabla
+        $post = Post::find(1);
+        $post->delete();
+        
+        return "Eliminado correctamente";
+    */
     
-    return "Eliminado correctamente";
 
     
 });
