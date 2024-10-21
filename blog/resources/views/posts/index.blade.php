@@ -2,14 +2,14 @@
 
     <h1>Aquí se mostrarán todos los posts</h1>
 
-    <a href="/posts/create">
+    <a href="{{route('posts.create')}}">
         Nuevo post
     </a>
 
     <ul>
         @foreach ($posts as $post)
             <li>
-                <a href="/posts/{{$post->id}}">
+                <a href="{{route('posts.show', $post)}}">
                     {{ $post->title }}
                 </a>
             </li>
