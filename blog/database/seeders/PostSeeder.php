@@ -13,6 +13,7 @@ class PostSeeder extends Seeder
      */
     public function run(): void
     {
+        /* Crear usuarios
         $post = new Post();
 
         $post->title = 'Post 2';
@@ -21,5 +22,6 @@ class PostSeeder extends Seeder
         $post->published_at = now();
 
         $post->save();
+        */
     }
 }
