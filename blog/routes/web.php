@@ -44,9 +44,11 @@ Route::get('prueba', function(){
         return $post;
     */
 
+    /*
         $post = Post::find(4);
 
         return $post;
+    */
 
     /*
         Actualizar registro
@@ -96,6 +98,11 @@ Route::get('prueba', function(){
         return "Eliminado correctamente";
     */
     
+    
+    $post = Post::find(1);
 
+    // return $post->published_at->format('d-m-Y');
+    // return $post->created_at->diffForHumans(); //(Te dice el tiempo ocurrido del created_ad)
+    dd($post->is_active);
     
 });
