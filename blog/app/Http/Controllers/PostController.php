@@ -22,6 +22,13 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
+        $request->validate([
+            'title' => 'required|min:5|max:255', // ['required', 'min:5', 'max:255'] (Este tambien sirve)
+            'slug' => 'required|unique:posts',
+            'categoria' => 'required',
+            'content' => 'required',
+        ]);
+
         Post::create($request->all());
         
         /*
@@ -68,6 +75,13 @@ class PostController extends Controller
     public function update(Request $request,Post $post)
     {
         // $post = Post::find($post);
+
+        $request->validate([
+            'title' => 'required|min:5|max:255', // ['required', 'min:5', 'max:255'] (Este tambien sirve)
+            'slug' => "required|unique:posts,slug,{$post->id}",
+            'categoria' => 'required',
+            'content' => 'required',
+        ]);
         
         $post->update($request->all());
 

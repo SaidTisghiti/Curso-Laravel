@@ -10,33 +10,49 @@
 
         <label>
             Título:
-            <input type="text" name="title" value="{{$post->title}}">
+            <input type="text" name="title" value="{{old('title', $post->title)}}">
         </label>
+        
+        @error('title')
+            <p>{{$message}}</p>
+        @enderror
 
         <br>
         <br>
 
         <label>
             Slug:
-            <input type="text" name="slug" value="{{$post->slug}}">
+            <input type="text" name="slug" value="{{old('slug', $post->slug)}}">
         </label>
+
+        @error('slug')
+            <p>{{$message}}</p>
+        @enderror
 
         <br>
         <br>
 
         <label>
             Categoria:
-            <input type="text" name="categoria" value="{{$post->categoria}}">
+            <input type="text" name="categoria" value="{{old('categoria', $post->categoria)}}">
         </label>
+
+        @error('categoria')
+            <p>{{$message}}</p>
+        @enderror
 
         <br>
         <br>
 
         <label>
             Contenido:
-            <textarea name="content">{{$post->content}}</textarea>
+            <textarea name="content">{{old('content', $post->content)}}</textarea>
         </label>
         
+        @error('content')
+            <p>{{$message}}</p>
+        @enderror
+
         <br>
         <br>
 
