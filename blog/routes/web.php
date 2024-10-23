@@ -56,6 +56,7 @@ Route::resource('posts', PostController::class)
 //     return "Aquí es mostrará el post {$post}";
 // });
 
+Route::resource('posts', PostController::class); 
 
 //Get
 //Post
