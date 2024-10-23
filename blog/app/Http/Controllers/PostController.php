@@ -21,6 +21,21 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
+        Post::create($request->all());
+        
+        /*
+        Post::create([
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'categoria' => $request->categoria,
+            'content' => $request->content,
+        ]);
+        (Esto es lo mismo que lo de abajo)
+        Post::create($request->all());
+        */
+        
+        /*
         $post = new Post();
 
         $post->title = $request->title;
@@ -29,6 +44,8 @@ class PostController extends Controller
         $post->content = $request->content;
 
         $post->save();
+        */
+        
 
         return redirect()->route('posts.index');
     }
@@ -51,13 +68,16 @@ class PostController extends Controller
     public function update(Request $request,Post $post)
     {
         // $post = Post::find($post);
+        
+        $post->update($request->all());
 
+        /*
         $post->title = $request->title;
         $post->slug = $request->slug;
         $post->categoria = $request->categoria;
         $post->content = $request->content;
 
-        $post->save();
+        $post->save();*/
 
         return redirect()->route('posts.show', $post);
     }
