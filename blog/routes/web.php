@@ -5,8 +5,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 
+
 Route::get('/', HomeController::class);
 
+/*
 Route::get('/posts', [PostController::class, 'index'])
     ->name('posts.index');
 
@@ -27,7 +29,21 @@ Route::put('/posts/{post}', [PostController::class, 'update'])
 
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])
     ->name('posts.destroy');
+*/
 
+/*
+Route::apiResource('posts', PostController::class);
+(los dos hacen lo mismo, solo que el de abajo lo indicas y el de arriba no)
+Route::resource('posts', PostController::class)
+    ->except(['create', 'edit']);
+
+*/
+
+// Route::resource('posts', PostController::class)
+    // ->parameters(['articles' => 'post']) (cambiar el nombre de las variables que pillamos del codigo)
+    // ->names('posts'); (cambiar el nombre de la ruta, ex: posts.delete)
+    // ->except(['destroy', 'edit']); (Te crea las rutas menos los que pongas allí)
+    // ->only(['index', 'create', 'store']); (Te crea solo los que pones allí)
 
 // Route::get('/posts/{post}/{category}', function($post, $category){
 //     return "Aquí es mostrará el post {$post} de la categoria {$category}";
