@@ -38,6 +38,7 @@ class StorePostRequest extends FormRequest
     //     ];
     // }
 
+    /*
     public function messages()
     {
         return [
@@ -51,4 +52,6 @@ class StorePostRequest extends FormRequest
             'title' => 'name',
         ];
     }
+    */
+    
 }
